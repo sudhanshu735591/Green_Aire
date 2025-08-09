@@ -26,8 +26,8 @@ function Footer() {
     ];
 
     const contactInfo = [
-        { icon: <FaMapMarkerAlt className="mr-2" />, text: "123 Industrial Area, Dubai, UAE" },
-        { icon: <FaPhone className="mr-2" />, text: "+971 4 123 4567" },
+        { icon: <FaMapMarkerAlt className="mr-2" />, text: "Industrial Area, Dubai Mainland, UAE" },
+        { icon: <FaPhone className="mr-2" />, text: "+971 0522125656" },
         { icon: <FaEnvelope className="mr-2" />, text: "info@greenac.ae" }
     ];
 
