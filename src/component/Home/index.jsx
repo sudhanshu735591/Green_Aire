@@ -64,11 +64,11 @@ export default function Company_Introduction() {
             {/* HVAC & Data Center Controller Section */}
             <section className="relative overflow-hidden">
                 {/* Diagonal background split (bottom-left to top-right) */}
-                <div className="absolute inset-0 z-0 bg-[linear-gradient(to_top_right,theme(colors.blue.950)_49.9%,white_50.1%)]"></div>
+                <div className="absolute inset-0 z-0 bg-[linear-gradient(to_top_right,theme(colors.blue.400)_49.9%,white_50.1%)]"></div>
 
                 {/* Content container */}
-                <div className="relative z-10 px-4 sm:px-6 py-10 md:py-15 text-yellow-400 ">
-                    <div className="max-w-7xl mx-auto">
+                <div className="relative z-10 px-4 sm:px-6  md:py-15 text-yellow-400 ">
+                    <div className="max-w-7xl mx-auto py-25">
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}

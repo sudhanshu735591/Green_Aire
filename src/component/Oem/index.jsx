@@ -65,7 +65,7 @@ function Oem() {
           </div>
 
           {/* Inner container for content - now with max-w-7xl */}
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto py-10">
             <motion.div
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
@@ -170,7 +170,7 @@ function Oem() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl shadow-2xl transform -rotate-1"></div>
                 <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl transform rotate-0">
                   <img
-                    src="/https://www.sportsboom.com/_next/image?url=https%3A%2F%2Fassets.sportsboom.com%2FGetty_Images_1247348876_807c2f9fcb.jpg&w=3840&q=75" 
+                    src="https://cdn.dribbble.com/userupload/30011078/file/original-12e6f61336510ec71937b6949c41be86.gif" 
                     alt="Our Team"
                     className="object-cover w-full h-full"
                   />

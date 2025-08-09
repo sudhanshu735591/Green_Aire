@@ -48,8 +48,8 @@ const Header = () => {
       name: 'OEM', 
       path: '/Oem',
       subItems:[
-        {name:"Dunhum Bush", path: '/Dunhumbush'},
-        {name:"Trane", path: '/Trane'}
+        {name:"Dunhum Bush", path: '/Oem'},
+        {name:"Trane", path: '/Oem'}
       ]
     },
     { name: 'Contact', path: '/Contact' }
