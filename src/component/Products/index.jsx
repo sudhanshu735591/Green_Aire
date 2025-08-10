@@ -183,7 +183,7 @@ export default function Products() {
       </div>
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-4 py-16">
+      <main className="relative z-10 container mx-auto px-4 py-20">
         {/* Hero Section */}
         <section className="text-center mb-10">
           <div className="relative inline-block">

@@ -100,8 +100,8 @@ export default function About() {
         className="fixed top-0 left-0 w-full h-full -z-10"
       ></canvas>
 
-      <div className="min-h-screen py-10  flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-white">
-        <div className="max-w-7xl w-full space-y-8 md:space-y-10">
+      <div className="min-h-screen py-30  flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-white">
+        <div className="w-full space-y-8 md:space-y-10">
           {/* Hero Section */}
           <div className='text-center'>
             <h1 className="text-3xl md:text-4xl lg:text-5xl animate-bounce font-bold mb-4 md:mb-6">
@@ -130,7 +130,7 @@ export default function About() {
           </div>
 
           {/* Who We Are Section */}
-          <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
+          <div className="relative min-h-screen overflow-hidden rounded-xl bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Floating gradient orbs */}
@@ -143,8 +143,8 @@ export default function About() {
             </div>
 
             {/* Glass morphism container */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
-              <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="relative z-10 w-full mx-auto px-4 sm:px-6 py-16 md:py-24">
+              <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center w-full ">
                 {/* Left Column - Text Content */}
                 <div className="space-y-6 md:space-y-8 backdrop-blur-sm bg-white/5 rounded-3xl p-6 md:p-8 border border-white/10 shadow-2xl shadow-indigo-900/30">
                   <style>
