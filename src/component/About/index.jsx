@@ -485,9 +485,9 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {[
                 {
-                  name: "Alex Johnson",
+                  name: "Prashant Rajan",
                   role: "Founder & CEO",
-                  image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1887&auto=format&fit=crop",
+                  image: "./Prashant_Rajan.png",
                   social: ["twitter", "linkedin", "github"]
                 },
                 {

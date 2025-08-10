@@ -78,7 +78,7 @@ const Contact = () => {
     return (
         <>
         <Header/>
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <motion.div 
                     initial={{ opacity: 0, y: -20 }}
@@ -328,7 +328,7 @@ const Contact = () => {
                                     </div>
                                     <div className="ml-3">
                                         <h3 className="text-sm font-medium text-indigo-200">Phone</h3>
-                                        <p className="text-lg text-white">+1 (555) 123-4567</p>
+                                        <p className="text-lg text-white">+971 0522125656</p>
                                     </div>
                                 </motion.div>
 
@@ -344,8 +344,7 @@ const Contact = () => {
                                     </div>
                                     <div className="ml-3">
                                         <h3 className="text-sm font-medium text-indigo-200">Address</h3>
-                                        <p className="text-lg text-white">123 Business Ave, Suite 400</p>
-                                        <p className="text-lg text-white">San Francisco, CA 94107</p>
+                                        <p className="text-lg text-white">Industrial Area, Dubai Mainland, UAE</p>
                                     </div>
                                 </motion.div>
 
