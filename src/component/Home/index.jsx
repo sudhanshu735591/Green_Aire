@@ -6,7 +6,6 @@ import { features } from './featureData';
 import Header from '../Header';
 import { useNavigate } from 'react-router-dom';
 export default function Company_Introduction() {
-    const hvacCanvasRef = useRef(null);
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [activeTab, setActiveTab] = useState('Oils');
     const tabs = ['Oils', 'HVAC', '3D Layout'];
@@ -46,24 +45,7 @@ export default function Company_Introduction() {
 
         return () => clearTimeout(timer);
     }, [currentIndex, isDeleting, speed, fullText]);
-    const tabVariants = {
-        inactive: {
-            backgroundColor: 'rgba(30, 58, 138, 0.5)',
-            color: '#93c5fd',
-            scale: 1,
-            transition: { duration: 0.2 }
-        },
-        active: {
-            backgroundColor: 'rgba(37, 99, 235, 1)',
-            color: '#ffffff',
-            scale: 1.05,
-            transition: { duration: 0.2 }
-        },
-        hover: {
-            backgroundColor: 'rgba(30, 64, 175, 0.7)',
-            transition: { duration: 0.2 }
-        }
-    };
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -90,9 +72,6 @@ export default function Company_Introduction() {
         }, 3000);
         return () => clearInterval(interval);
     }, []);
-
-
-
     return (
         <>
             <Header />
@@ -139,6 +118,15 @@ export default function Company_Introduction() {
                                         ease: "easeInOut",
                                     }}
                                 >
+                                    We are Sister Concern of Green Air Technologies India .
+                                    We GreenAire Air Conditioning Systems co. LLC represent Dunham Bush and Trane
+                                    Technologies, as their Authorized Partners & Consultants in India with services across the Middle
+                                    East (UAE) and Africa.
+                                    Some of our esteemed clients include, GMR, ONGC India, Oil India, Indian Refineries (Acting as
+                                    Consultants for HVAC for their Building in Rajasthan), Vertiv & AWS (Amazon Data Centres)
+                                    We would like to get empanelled and extend our services with your company for supporting in
+                                    HVAC solutions.
+
                                     Advanced climate control and energy optimization for mission-critical environments
                                     Our advanced control system optimizes climate and energy efficiency in mission-critical environments. Using AI-driven automation, it monitors temperature, humidity, and airflow in real-time while minimizing energy consumption. Designed for data centers, commercial buildings, and industrial facilities, it ensures reliability, sustainability, and cost savings through intelligent cooling management and predictive maintenance.
                                 </motion.p>
@@ -157,6 +145,10 @@ export default function Company_Introduction() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5 }}
+                                    whileHover={{
+                                        scale: 1.02,
+                                        transition: { duration: 0.3 }
+                                    }}
                                 >
                                     <motion.div
                                         className="flex justify-center text-yellow-200 space-x-2 mb-6"
@@ -167,28 +159,79 @@ export default function Company_Introduction() {
                                         {tabs.map((tab) => (
                                             <motion.button
                                                 key={tab}
-                                                className={`px-4 cursor-pointer py-2 rounded-lg font-medium text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50`}
+                                                className={`px-4 cursor-pointer py-2 rounded-lg font-medium text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 relative`}
                                                 variants={itemVariants}
                                                 animate={activeTab === tab ? 'active' : 'inactive'}
                                                 whileHover={activeTab !== tab ? 'hover' : {}}
                                                 onClick={() => setActiveTab(tab)}
                                             >
-                                                {tab}
+                                                {activeTab === tab && (
+                                                    <motion.span
+                                                        className="absolute inset-0 border-2 border-yellow-400 rounded-lg"
+                                                        layoutId="activeTab"
+                                                        initial={false}
+                                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                                    />
+                                                )}
+                                                <span className="relative z-10">
+                                                    {tab}
+                                                </span>
                                             </motion.button>
                                         ))}
                                     </motion.div>
 
-                                    {/* Content area that could animate based on active tab */}
+                                    {/* Content area with enhanced animation */}
                                     <motion.div
-                                        className="p-4 bg-blue-900/20 rounded-xl text-white/80 text-center"
+                                        className="p-4 bg-blue-900/20 rounded-xl text-white/80 text-center border border-blue-700/50"
                                         key={activeTab}
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.3 }}
+                                        initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                                        animate={{
+                                            opacity: 1,
+                                            y: 0,
+                                            scale: 1,
+                                            borderColor: activeTab === 'Oils' ? '#fde047' :
+                                                activeTab === 'HVAC' ? '#7dd3fc' :
+                                                    '#a78bfa' // Different border colors for each tab
+                                        }}
+                                        transition={{
+                                            duration: 0.4,
+                                            borderColor: { duration: 0.3 }
+                                        }}
+                                        whileHover={{
+                                            boxShadow: '0 0 15px rgba(59, 130, 246, 0.5)',
+                                            transition: { duration: 0.2 }
+                                        }}
                                     >
-                                        {activeTab === 'Oils' && <p>Oil system configuration and settings</p>}
-                                        {activeTab === 'HVAC' && <p>Heating, Ventilation and AC controls</p>}
-                                        {activeTab === '3D Layout' && <p>Interactive 3D visualization</p>}
+                                        {activeTab === 'Oils' && (
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ delay: 0.2 }}
+                                            >
+                                                <p>Oil system configuration and settings</p>
+                                                {/* Add more oil-specific content here */}
+                                            </motion.div>
+                                        )}
+                                        {activeTab === 'HVAC' && (
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ delay: 0.2 }}
+                                            >
+                                                <p>Heating, Ventilation and AC controls</p>
+                                                {/* Add more HVAC-specific content here */}
+                                            </motion.div>
+                                        )}
+                                        {activeTab === '3D Layout' && (
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ delay: 0.2 }}
+                                            >
+                                                <p>Interactive 3D visualization</p>
+                                                {/* Add more 3D-specific content here */}
+                                            </motion.div>
+                                        )}
                                     </motion.div>
                                 </motion.div>
 
@@ -221,7 +264,7 @@ export default function Company_Introduction() {
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
                                                 <h3 className="font-semibold mb-3 flex text-yellow-500 items-center">
-                                                    <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                                     </svg>
                                                     Oil Consumption
@@ -240,7 +283,7 @@ export default function Company_Introduction() {
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
                                                 <h3 className="font-semibold mb-3 flex items-center text-yellow-400">
-                                                    <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                                     </svg>
                                                     Oil Analysis
@@ -262,8 +305,8 @@ export default function Company_Introduction() {
                                                 transition={{ duration: 0.5 }}
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
-                                                <h3 className="font-semibold mb-3 flex items-center">
-                                                    <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <h3 className="font-semibold mb-3 flex items-center text-yellow-400">
+                                                    <svg className="w-5 h-5 mr-2 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                                                     </svg>
                                                     Temperature Control
@@ -281,8 +324,8 @@ export default function Company_Introduction() {
                                                 transition={{ duration: 0.5, delay: 0.1 }}
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
-                                                <h3 className="font-semibold mb-3 flex items-center">
-                                                    <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <h3 className="font-semibold mb-3 flex items-center text-yellow-400">
+                                                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                                                     </svg>
                                                     Humidity Control
@@ -300,8 +343,8 @@ export default function Company_Introduction() {
                                                 transition={{ duration: 0.5, delay: 0.2 }}
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
-                                                <h3 className="font-semibold mb-3 flex items-center">
-                                                    <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <h3 className="font-semibold mb-3 flex items-center text-yellow-400">
+                                                    <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                                     </svg>
                                                     Energy Efficiency
@@ -323,8 +366,8 @@ export default function Company_Introduction() {
                                                 transition={{ duration: 0.5 }}
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
-                                                <h3 className="font-semibold mb-3 flex items-center">
-                                                    <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <h3 className="font-semibold mb-3 flex items-center text-yellow-400">
+                                                    <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                                                     </svg>
                                                     Facility Overview
@@ -343,8 +386,8 @@ export default function Company_Introduction() {
                                                 transition={{ duration: 0.5, delay: 0.1 }}
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
-                                                <h3 className="font-semibold mb-3 flex items-center">
-                                                    <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <h3 className="font-semibold mb-3 flex items-center text-yellow-400">
+                                                    <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                                                     </svg>
                                                     Equipment Mapping
@@ -363,7 +406,7 @@ export default function Company_Introduction() {
                                                 transition={{ duration: 0.5, delay: 0.2 }}
                                                 className="bg-blue-800/30 p-4 rounded-lg border border-blue-700"
                                             >
-                                                <h3 className="font-semibold mb-3 flex items-center">
+                                                <h3 className="font-semibold mb-3 flex items-center text-yellow-400">
                                                     <svg className="w-5 h-5 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                                                     </svg>
@@ -404,7 +447,7 @@ export default function Company_Introduction() {
                                                 </div>
                                                 <div>
                                                     <p className="text-xs text-blue-300">Temperature</p>
-                                                    <p className="text-xl font-bold">22.5°C</p>
+                                                    <p className="text-xl font-bold text-yellow-400">22.5°C</p>
                                                 </div>
                                             </div>
                                             <div className="mt-3 h-1 bg-blue-800 rounded-full overflow-hidden">
@@ -425,7 +468,7 @@ export default function Company_Introduction() {
                                                 </div>
                                                 <div>
                                                     <p className="text-xs text-blue-300">Humidity</p>
-                                                    <p className="text-xl font-bold">45%</p>
+                                                    <p className="text-xl font-bold text-yellow-400">45%</p>
                                                 </div>
                                             </div>
                                             <div className="mt-3 h-1 bg-blue-800 rounded-full overflow-hidden">
@@ -446,7 +489,7 @@ export default function Company_Introduction() {
                                                 </div>
                                                 <div>
                                                     <p className="text-xs text-blue-300">Energy</p>
-                                                    <p className="text-xl font-bold">78 kW</p>
+                                                    <p className="text-xl font-bold text-yellow-400">78 kW</p>
                                                 </div>
                                             </div>
                                             <div className="mt-3 h-1 bg-blue-800 rounded-full overflow-hidden">
@@ -462,8 +505,8 @@ export default function Company_Introduction() {
                                         transition={{ delay: 0.2 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h3 className="text-lg font-semibold mb-4 flex items-center">
-                                            <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <h3 className="text-lg font-semibold mb-4 flex items-center text-yellow-400">
+                                            <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
                                             </svg>
                                             HVAC Controls
@@ -484,7 +527,7 @@ export default function Company_Introduction() {
                                                 </div>
                                             </div>
                                             <div>
-                                                <button className="w-full py-2 bg-blue-600 hover:bg-blue-500 rounded-lg font-medium transition-all">
+                                                <button className="w-full py-2 bg-blue-600 hover:bg-blue-500 text-yellow-400 rounded-lg font-medium transition-all">
                                                     Optimize Climate Settings
                                                 </button>
                                             </div>
@@ -507,7 +550,7 @@ export default function Company_Introduction() {
                                     <div className="absolute bottom-4 left-4 right-4 bg-blue-900/80 p-4 rounded-lg backdrop-blur-sm">
                                         <div className="flex justify-between items-center">
                                             <div>
-                                                <h3 className="font-medium">Cooling System Active</h3>
+                                                <h3 className="font-medium text-yellow-400">Cooling System Active</h3>
                                                 <p className="text-xs text-blue-300">4 chillers running at 75% capacity</p>
                                             </div>
                                             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>

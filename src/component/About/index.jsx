@@ -4,6 +4,8 @@ import Footer from '../Footer';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useNavigate } from 'react-router-dom';
+import Carousel from './missonSection';
+import ProductCarousel from './missonSection';
 
 export default function About() {
   const canvasRef = useRef(null);
@@ -91,9 +93,9 @@ export default function About() {
   return (
     <>
       <Header />
-        <title>About Us | Your Company Name</title>
-        <meta name="description" content="Learn more about our company and team" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>About Us | Your Company Name</title>
+      <meta name="description" content="Learn more about our company and team" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <canvas
         ref={canvasRef}
@@ -407,6 +409,8 @@ export default function About() {
             .animate-underline { animation: underline 1.5s ease-out forwards; }
           `}</style>
 
+          <ProductCarousel/>
+
           {/* Values Section */}
           <div className="relative overflow-hidden">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16">
@@ -543,7 +547,7 @@ export default function About() {
               <p className="text-base md:text-lg text-gray-200 mb-6 md:mb-8">
                 We're always looking for talented, passionate people to join our team.
               </p>
-              <button onClick={()=>navigate("/Contact")} className="cursor-pointer px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-bold text-base md:text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:scale-105">
+              <button onClick={() => navigate("/Contact")} className="cursor-pointer px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-bold text-base md:text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:scale-105">
                 Join Our Team
               </button>
             </div>
