@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
+import { saveAs } from 'file-saver';
 const products = [
   { 
     name: 'VRF Systems', 
@@ -123,7 +124,6 @@ const products = [
     img:"https://chools.in/wp-content/uploads/Manufacturing-ANIM.gif"
   }
 ];
-
 export default function Products() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -143,13 +143,11 @@ export default function Products() {
     }, 8000);
     return () => clearInterval(interval);
   }, [popupOpen]);
-
   const openProductPopup = (product) => {
     setSelectedProduct(product);
     setPopupOpen(true);
     document.body.style.overflow = 'hidden';
   };
-
   const closePopup = () => {
     setPopupOpen(false);
     setTimeout(() => {
@@ -157,7 +155,10 @@ export default function Products() {
       document.body.style.overflow = 'auto';
     }, 300);
   };
-
+  function downloadFile(){
+      const pdfUrl = "./GACS BREIF PROFILE.pdf"
+      saveAs(pdfUrl,"GACS BREIF PROFILE.pdf")
+  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-50">
         <title>Premium Climate Solutions | Our Products</title>
@@ -355,7 +356,8 @@ export default function Products() {
               <div className="bg-gray-50 px-8 py-4 sm:px-8 sm:flex sm:flex-row-reverse">
                 <button
                   type="button"
-                  className="w-full inline-flex justify-center rounded-full border border-transparent shadow-sm px-6 py-3 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm transition-all transform hover:scale-105"
+                  className="cursor-pointer w-full inline-flex justify-center rounded-full border border-transparent shadow-sm px-6 py-3 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm transition-all transform hover:scale-105"
+                  onClick={downloadFile}
                 >
                   Download Brochure
                 </button>

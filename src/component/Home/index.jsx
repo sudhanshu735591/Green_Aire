@@ -119,8 +119,8 @@ export default function Company_Introduction() {
                                     }}
                                 >
                                     We are Sister Concern of Green Air Technologies India .
-                                    We GreenAire Air Conditioning Systems co. LLC represent Dunham Bush and Trane
-                                    Technologies, as their Authorized Partners & Consultants in India with services across the Middle
+                                    We GreenAire Air Conditioning Systems co. LLC represent <a target="_blank" className='font-semibold uppercase text-blue-900 hover:underline' href="https://dunham-bush.com/">Dunham Bush and Trane
+                                    Technologies</a>, as their Authorized Partners & Consultants in India with services across the Middle
                                     East (UAE) and Africa.
                                     Some of our esteemed clients include, GMR, ONGC India, Oil India, Indian Refineries (Acting as
                                     Consultants for HVAC for their Building in Rajasthan), Vertiv & AWS (Amazon Data Centres)
