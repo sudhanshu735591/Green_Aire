@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '../Footer';
 import Header from '../Header';
@@ -41,10 +41,8 @@ const Contact = () => {
             setErrors(validationErrors);
             return;
         }
-
         setIsSubmitting(true);
         setErrors({});
-
         // FormSubmit.co integration
         const form = e.target;
         form.action = "https://formsubmit.co/ajax/shanuchees@gmail.com";
@@ -433,5 +431,4 @@ const Contact = () => {
         </>
     );
 };
-
 export default Contact;
