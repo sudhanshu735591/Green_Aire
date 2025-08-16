@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Footer from '../Footer';
 import { features } from './featureData';
 import Header from '../Header';
-import { useNavigate } from 'react-router-dom';
 export default function Company_Introduction() {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [activeTab, setActiveTab] = useState('Oils');
@@ -76,7 +75,6 @@ export default function Company_Introduction() {
         <>
             <Header />
             <div className="min-h-screen bg-white">
-                {/* HVAC & Data Center Controller Section */}
                 <section className="relative overflow-hidden">
                     {/* Diagonal background split (bottom-left to top-right) */}
                     <div className="absolute inset-0 z-0 bg-[linear-gradient(to_top_right,theme(colors.blue.400)_49.9%,white_50.1%)]"></div>
@@ -119,7 +117,7 @@ export default function Company_Introduction() {
                                     }}
                                 >
                                     We are Sister Concern of Green Air Technologies India .
-                                    We GreenAire Air Conditioning Systems co. LLC represent <a target="_blank" className='font-semibold uppercase text-blue-900 hover:underline' href="https://dunham-bush.com/">Dunham Bush and Trane
+                                    We GreenAire Air Conditioning Systems co. LLC represent <a target="_blank" className='font-semibold text-blue-900 hover:underline' href="https://dunham-bush.com/">Dunham Bush and Trane
                                     Technologies</a>, as their Authorized Partners & Consultants in India with services across the Middle
                                     East (UAE) and Africa.
                                     Some of our esteemed clients include, GMR, ONGC India, Oil India, Indian Refineries (Acting as

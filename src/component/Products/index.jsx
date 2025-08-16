@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
 import { saveAs } from 'file-saver';
+import { useNavigate } from 'react-router-dom';
 const products = [
   { 
     name: 'VRF Systems', 
@@ -130,7 +131,7 @@ export default function Products() {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [popupOpen, setPopupOpen] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const interval = setInterval(() => {
       if (!popupOpen) {
@@ -345,7 +346,7 @@ export default function Products() {
                     <div className="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-5 text-white">
                       <h5 className="font-semibold mb-3">Ready to learn more?</h5>
                       <p className="mb-4 opacity-90">Our experts can help you determine the perfect solution for your needs.</p>
-                      <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105">
+                      <button onClick={()=>navigate("/Contact")} className="cursor-pointer bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105">
                         Request Consultation
                       </button>
                     </div>

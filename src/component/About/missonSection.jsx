@@ -8,8 +8,8 @@ const ProductCarousel = () => {
     const productCategories = [
         {
             id: 1,
-            category: "Our Team",
-            description: "High-efficiency cooling solutions for industrial and commercial applications",
+            category: "OUR TEAM",
+            description: "",
             products: [
                 {
                     name: "Our team mate",
@@ -17,7 +17,7 @@ const ProductCarousel = () => {
                     image: "./Team_image.png"
                 },
                 {
-                    name: "Water Cooled Chiller",
+                    name: "Mission & Vision",
                     specs: ["We are dedicated to upholding core values that define our commitment to excellence. Our mission is to provide superior HVAC solutions driven by: 1. Quality 2. Sustainability 3. Customer Satisfaction"],
                     image: "./Team_image_1.png"
                 }
@@ -25,7 +25,7 @@ const ProductCarousel = () => {
         },
         {
             id: 2,
-            category: "Products Range: Chillers",
+            category: "Products Range: CHILLERS",
             description: "Air handling solutions for optimal indoor air quality and comfort",
             products: [
                 {

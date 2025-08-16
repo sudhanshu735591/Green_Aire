@@ -5,11 +5,14 @@ import About from './component/About';
 import Products from './component/Products';
 import Oem from './component/Oem';
 import Contact from './component/Contact';
+import CurvedLoop from './component/screenLoader';
 function App() {
   return (
     <>
       <BrowserRouter>
       <Routes>
+        {/* <Route path='/' element={<CurvedLoop/>}/> */}
+
         <Route path="/" element={<Company_Introduction/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/Products' element={<Products/>}/>
