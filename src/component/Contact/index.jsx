@@ -354,7 +354,7 @@ const Contact = () => {
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.4 }}
-                                className="bg-[#081C3A] py-12 px-6 sm:p-12 lg:col-span-1 relative overflow-hidden"
+                                className="bg-gradient-to-br from-blue-900 to-emerald-800 py-12 px-6 sm:p-12 lg:col-span-1 relative overflow-hidden"
                             >
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600 rounded-full opacity-20 transform translate-x-16 -translate-y-16"></div>
                                 <div className="absolute bottom-0 left-0 w-40 h-40 bg-indigo-600 rounded-full opacity-20 transform -translate-x-20 translate-y-20"></div>
